@@ -106,11 +106,17 @@ a {
 }
 
 .logo img {
-    width: 90px;
+    width: 180px;
     height: auto;
     color: var(--secondary);
     letter-spacing: 1px;
     padding: 0.5rem;
+}
+
+/*logo color changing*/
+
+.header .logo img {
+    filter: brightness(0) invert(1);
 }
 
 /* Mobile Menu Toggle */
