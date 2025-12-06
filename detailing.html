@@ -1,4 +1,3 @@
-<!-- detailing.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,190 @@
     <title>Detailing Services | Pro Car Care Hub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add detailing-specific styles within style tags -->
+    <style>
+        /* ===== DETALING PAGE SPECIFIC STYLES ===== */
+        /* Add these to your existing style.css or keep here for modularity */
+        
+        /* Background Pattern */
+        .detailing-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e8f5e9;
+            background-image: 
+                radial-gradient(#2e7d32 1px, transparent 1px),
+                radial-gradient(#4caf50 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        /* Enhanced Hero Section */
+        .page-header {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.9) 0%, rgba(27, 94, 32, 0.9) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1565689221354-d87f85d4aee2?auto=format&fit=crop&w=1920') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-title {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Services Grid Section */
+        .services-showcase {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Service Cards Grid */
+        .services-grid-detailing {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card-detailing {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            height: 100%;
+        }
+        
+        .service-card-detailing:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-image-detailing {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .service-content-detailing {
+            padding: 1.5rem;
+        }
+        
+        .service-title-detailing {
+            color: #2e7d32;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4caf50;
+        }
+        
+        .service-description-detailing {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .service-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #2e7d32;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Call to Action */
+        .detailing-cta {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #e8f5e9 0%, white 100%);
+            text-align: center;
+        }
+        
+        .cta-container-detailing {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta-button-detailing {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #2e7d32;
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #2e7d32;
+        }
+        
+        .cta-button-detailing:hover {
+            background: transparent;
+            color: #2e7d32;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .services-grid-detailing {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-container-detailing {
+                padding: 1.5rem;
+                margin: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Background Pattern -->
+    <div class="detailing-background"></div>
+    
+    <!-- Navigation (Keep existing) -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
@@ -22,7 +203,7 @@
                 </button>
                 <ul class="nav-menu" id="navMenu">
                     <li class="nav-item"><a href="mechanical.html" class="nav-link">Mechanical</a></li>
-                    <li class="nav-item"><a href="detailing.html" class="nav-link">Detailing</a></li>
+                    <li class="nav-item"><a href="detailing.html" class="nav-link active">Detailing</a></li>
                     <li class="nav-item"><a href="modifications.html" class="nav-link">Modifications</a></li>
                     <li class="nav-item"><a href="accessories.html" class="nav-link">Accessories</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -32,13 +213,15 @@
     </header>
 
     <main class="main-content">
+        <!-- SECTION 1: Hero/Header (Keep existing but enhanced) -->
         <section class="page-header">
             <div class="container">
                 <h1 class="page-title">Detailing Services</h1>
-                <p>Professional interior and exterior detailing for showroom shine</p>
+                <p>Professional automotive detailing that restores paint depth, protects surfaces, and delivers showroom shine</p>
             </div>
         </section>
         
+        <!-- SECTION 2: Original Content (Keep existing) -->
         <section class="page-content">
             <div class="container">
                 <div class="content-container">
@@ -52,8 +235,164 @@
                 </div>
             </div>
         </section>
+        
+        <!-- SECTION 3: NEW - Services Grid (Add this new section) -->
+        <section class="services-showcase">
+            <div class="container">
+                <h2 class="section-title">Our Premium Detailing Services</h2>
+                <p class="services-intro">Each service is performed by certified detailers using industry-leading techniques and eco-friendly products to deliver showroom-quality results that last.</p>
+                
+                <!-- Service Cards Grid -->
+                <div class="services-grid-detailing">
+                    
+                    <!-- Service 1: Exterior Foam Wash -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">1</div>
+                        <img src="https://images.unsplash.com/photo-1565689221354-d87f85d4aee2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Exterior Foam Wash" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Exterior Foam Wash</h3>
+                            <p class="service-description-detailing">High-pressure foam application gently lifts dirt without scratching. pH-balanced foam dissolves road grime and contaminants.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2: Interior Deep Cleaning -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">2</div>
+                        <img src="https://images.unsplash.com/photo-1605733160673-5c2c0c6c78e8?auto=format&fit=crop&w=600&q=80" 
+                             alt="Interior Deep Cleaning" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Interior Deep Cleaning</h3>
+                            <p class="service-description-detailing">Complete interior rejuvenation with steam cleaning, stain removal, and fabric protection for a like-new cabin environment.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3: Teflon Coating -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">3</div>
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Teflon Coating" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Teflon Coating</h3>
+                            <p class="service-description-detailing">Advanced polymer coating creates a hydrophobic barrier against UV rays, oxidation, and environmental contaminants.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4: Ceramic Coating -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">4</div>
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Ceramic Coating" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Ceramic Coating</h3>
+                            <p class="service-description-detailing">Nano-ceramic technology bonds at molecular level, providing unmatched scratch resistance and permanent gloss.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5: Machine Polishing -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">5</div>
+                        <img src="https://images.unsplash.com/photo-1562077980-9d5506f6c192?auto=format&fit=crop&w=600&q=80" 
+                             alt="Machine Polishing" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Machine Polishing</h3>
+                            <p class="service-description-detailing">Dual-stage correction removes swirl marks and light scratches, restoring deep, mirror-like reflections.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 6: Tyre & Alloy -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">6</div>
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=600&q=80" 
+                             alt="Tyre & Alloy Cleaning" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Tyre & Alloy Cleaning</h3>
+                            <p class="service-description-detailing">Specialized cleaners remove brake dust, non-greasy dressing provides rich satin finish that repels dirt.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 7: Engine Bay -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">7</div>
+                        <img src="https://images.unsplash.com/photo-1603575448878-868a20723f5d?auto=format&fit=crop&w=600&q=80" 
+                             alt="Engine Bay Cleaning" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Engine Bay Cleaning</h3>
+                            <p class="service-description-detailing">Safe, low-pressure steam cleaning degreases and revitalizes. Protective dressing prevents corrosion.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 8: Glass Cleaning -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">8</div>
+                        <img src="https://images.unsplash.com/photo-1565689221354-d87f85d4aee2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Glass Cleaning" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Glass Cleaning</h3>
+                            <p class="service-description-detailing">Professional-grade cleaning with anti-fog treatment. Specialized water-spot removal for crystal clarity.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 9: Underbody Wash -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">9</div>
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Underbody Wash" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Underbody Wash</h3>
+                            <p class="service-description-detailing">High-pressure undercarriage cleaning removes salt. Anti-rust coating protects against corrosion.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 10: Dashboard Restoration -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">10</div>
+                        <img src="https://images.unsplash.com/photo-1605733160673-5c2c0c6c78e8?auto=format&fit=crop&w=600&q=80" 
+                             alt="Dashboard Restoration" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Dashboard Restoration</h3>
+                            <p class="service-description-detailing">Restores faded dashboards to original condition. UV-blocking sealant prevents future sun damage.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 11: Headlight Restoration -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">11</div>
+                        <img src="https://images.unsplash.com/photo-1562077980-9d5506f6c192?auto=format&fit=crop&w=600&q=80" 
+                             alt="Headlight Restoration" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Headlight Restoration</h3>
+                            <p class="service-description-detailing">Multi-stage process removes yellowing and haze. UV-resistant clear coat prevents future oxidation.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 12: Leather Conditioning -->
+                    <div class="service-card-detailing">
+                        <div class="service-number">12</div>
+                        <img src="https://images.unsplash.com/photo-1605733160673-5c2c0c6c78e8?auto=format&fit=crop&w=600&q=80" 
+                             alt="Leather Conditioning" class="service-image-detailing">
+                        <div class="service-content-detailing">
+                            <h3 class="service-title-detailing">Leather Conditioning</h3>
+                            <p class="service-description-detailing">Premium leather cleaning removes stains. Deep conditioning restores moisture and prevents cracking.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- End Service Cards Grid -->
+            </div>
+        </section>
+        
+        <!-- SECTION 4: NEW - Call to Action -->
+        <section class="detailing-cta">
+            <div class="cta-container-detailing">
+                <h2 class="section-title">Ready for Showroom Perfection?</h2>
+                <p>Our certified detailing specialists are ready to transform your vehicle with precision and care. Contact us today for a personalized consultation.</p>
+                <a href="contact.html" class="cta-button-detailing">Schedule Detailing Service</a>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer (Keep existing) -->
     <footer class="footer">
         <div class="container">
             <p class="footer-text">© Pro Car Care Hub — All Rights Reserved -2025-2026</p>
@@ -61,5 +400,54 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Add detailing-specific JavaScript -->
+    <script>
+        // Detailing page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight active nav link
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === 'detailing.html') {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Add hover effect to service cards
+            const serviceCards = document.querySelectorAll('.service-card-detailing');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // Smooth scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href !== '#' && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
