@@ -6,7 +6,7 @@ function openWhatsApp() {
     // Remove +, spaces, and parentheses
     // Example: If your number is +1 (234) 567-8900
     // Change to: 12345678900
-    const phoneNumber = '1234567890'; // ← CHANGE THIS NUMBER!
+    const phoneNumber = '918978679781'; // ← CHANGE THIS NUMBER!
     
     const message = 'Hello Pro Car Care Hub! I would like to know more about your services.';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -23,7 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ⚠️ IMPORTANT: CHANGE THIS TO YOUR WHATSAPP ICON IMAGE!
     // Option 1: Use your own image (recommended)
-    whatsappButton.src = 'whatsapp-icon.png'; // ← CHANGE THIS IF YOU HAVE YOUR OWN ICON
+    whatsappButton.src = '36948.png'; // ← CHANGE THIS IF YOU HAVE YOUR OWN ICON
+
+    // FIX FOR BIG 800×800 IMAGE
+whatsappButton.style.width = '60px';
+whatsappButton.style.height = '60px';
+whatsappButton.style.objectFit = 'cover';
+    
     
     // Option 2: Use Font Awesome icon (if you don't have an image)
     // Uncomment the next 3 lines and comment the line above if you want to use Font Awesome
