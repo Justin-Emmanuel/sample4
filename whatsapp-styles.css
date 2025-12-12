@@ -1,27 +1,41 @@
-/* whatsapp-styles.css - WhatsApp Sticky Floating Icon */
+/* whatsapp-styles.css - Draggable WhatsApp Icon */
 
-/* WhatsApp Floating Icon - STICKY POSITION */
+/* WhatsApp Floating Icon - DRAGGABLE */
 #whatsapp-icon {
-    position: fixed;  /* ⭐ STICKY - STAYS ON SCREEN */
-    bottom: 30px;
-    right: 30px;
+    position: fixed;           /* ⭐ FIXED POSITION */
+    bottom: 30px;              /* ⭐ DEFAULT POSITION */
+    right: 30px;               /* ⭐ DEFAULT POSITION */
     width: 60px;
     height: 60px;
-    cursor: pointer;
-    z-index: 9999;    /* ⭐ HIGHEST LAYER - ALWAYS ON TOP */
+    cursor: grab;              /* ⭐ GRAB CURSOR */
+    z-index: 9999;
     animation: 
         blink 2s ease-in-out infinite, 
         shakeZoom 3s ease-in-out infinite,
         glow 2s ease-in-out infinite;
     transition: transform 0.3s ease;
     
-    /* ⭐ FORCE VISIBILITY */
+    /* ⭐ DRAGGABLE STYLES */
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    user-select: none;         /* ⭐ PREVENT TEXT SELECTION */
+    touch-action: none;        /* ⭐ FOR MOBILE DRAGGING */
+    border-radius: 50%;        /* ⭐ CIRCLE SHAPE */
+    background: white;         /* ⭐ WHITE BACKGROUND */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* ⭐ SHADOW */
 }
 
-/* Hover Effect */
+/* ⭐ WHEN DRAGGING */
+#whatsapp-icon:active,
+#whatsapp-icon.dragging {
+    cursor: grabbing;          /* ⭐ GRABBING CURSOR */
+    animation-play-state: paused;
+    transform: scale(1.1);     /* ⭐ SLIGHTLY BIGGER */
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); /* ⭐ GREEN GLOW */
+}
+
+/* ⭐ HOVER EFFECT */
 #whatsapp-icon:hover {
     animation-play-state: paused;
     transform: scale(1.2);
@@ -29,28 +43,16 @@
 
 /* Blink Animation */
 @keyframes blink {
-    0%, 100% { 
-        opacity: 1; 
-    }
-    50% { 
-        opacity: 0.6; 
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
 }
 
-/* Combined Shake and Zoom Animation */
+/* Shake and Zoom Animation */
 @keyframes shakeZoom {
-    0%, 100% { 
-        transform: scale(1) rotate(0deg); 
-    }
-    25% { 
-        transform: scale(1.1) rotate(5deg) translateX(2px); 
-    }
-    50% { 
-        transform: scale(1.15) rotate(0deg); 
-    }
-    75% { 
-        transform: scale(1.1) rotate(-5deg) translateX(-2px); 
-    }
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(5deg) translateX(2px); }
+    50% { transform: scale(1.15) rotate(0deg); }
+    75% { transform: scale(1.1) rotate(-5deg) translateX(-2px); }
 }
 
 /* Neon Green Glow Animation */
@@ -66,21 +68,27 @@
     }
 }
 
-/* Responsive */
+/* ⭐ RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
     #whatsapp-icon {
-        width: 50px;
+        width: 55px;           /* ⭐ SLIGHTLY SMALLER */
+        height: 55px;
+        bottom: 25px;          /* ⭐ SAFE AREA */
+        right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #whatsapp-icon {
+        width: 50px;           /* ⭐ SMALLER FOR PHONES */
         height: 50px;
         bottom: 20px;
         right: 20px;
     }
 }
 
-@media (max-width: 480px) {
-    #whatsapp-icon {
-        width: 45px;
-        height: 45px;
-        bottom: 15px;
-        right: 15px;
-    }
+/* ⭐ VISUAL FEEDBACK WHEN MOVING */
+#whatsapp-icon.moving {
+    opacity: 0.9;
+    border: 2px dashed #25D366;
 }
