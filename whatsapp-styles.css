@@ -1,0 +1,80 @@
+/* whatsapp-styles.css - WhatsApp Floating Icon Styles */
+
+/* WhatsApp Floating Icon */
+#whatsapp-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 9999;
+    animation: 
+        blink 2s ease-in-out infinite, 
+        shakeZoom 3s ease-in-out infinite,
+        glow 2s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+#whatsapp-icon:hover {
+    animation-play-state: paused;
+    transform: scale(1.2);
+}
+
+/* Blink Animation */
+@keyframes blink {
+    0%, 100% { 
+        opacity: 1; 
+    }
+    50% { 
+        opacity: 0.6; 
+    }
+}
+
+/* Combined Shake and Zoom Animation */
+@keyframes shakeZoom {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg); 
+    }
+    25% { 
+        transform: scale(1.1) rotate(5deg) translateX(2px); 
+    }
+    50% { 
+        transform: scale(1.15) rotate(0deg); 
+    }
+    75% { 
+        transform: scale(1.1) rotate(-5deg) translateX(-2px); 
+    }
+}
+
+/* Neon Green Glow Animation */
+@keyframes glow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 10px #25D366) 
+                drop-shadow(0 0 15px #25D366); 
+    }
+    50% { 
+        filter: drop-shadow(0 0 20px #25D366) 
+                drop-shadow(0 0 30px #25D366)
+                drop-shadow(0 0 40px #25D366); 
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #whatsapp-icon {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #whatsapp-icon {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
