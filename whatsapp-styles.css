@@ -1,21 +1,27 @@
-/* whatsapp-styles.css - WhatsApp Floating Icon Styles */
+/* whatsapp-styles.css - WhatsApp Sticky Floating Icon */
 
-/* WhatsApp Floating Icon */
+/* WhatsApp Floating Icon - STICKY POSITION */
 #whatsapp-icon {
-    position: fixed;
+    position: fixed;  /* ⭐ STICKY - STAYS ON SCREEN */
     bottom: 30px;
     right: 30px;
     width: 60px;
     height: 60px;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 9999;    /* ⭐ HIGHEST LAYER - ALWAYS ON TOP */
     animation: 
         blink 2s ease-in-out infinite, 
         shakeZoom 3s ease-in-out infinite,
         glow 2s ease-in-out infinite;
     transition: transform 0.3s ease;
+    
+    /* ⭐ FORCE VISIBILITY */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
+/* Hover Effect */
 #whatsapp-icon:hover {
     animation-play-state: paused;
     transform: scale(1.2);
